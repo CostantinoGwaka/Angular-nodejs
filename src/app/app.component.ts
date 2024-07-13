@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,12 +9,18 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterOutlet,
+    RouterLink
   ]
 })
 export class AppComponent {
-  title = 'Angular 12 Crud';
+  title = 'Angular 12';
+
+  constructor(
+    private router: Router,
+  ) {
+
+  }
 }
